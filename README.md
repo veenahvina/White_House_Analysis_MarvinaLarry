@@ -33,9 +33,32 @@ I created bar graphs before and after the recoding of the "X" and "Y" survey res
 
 ![image](https://github.com/veenahvina/White_House_Analysis_MarvinaLarry/assets/131216752/8db3d243-8383-45e0-95b5-4d48894a9e20)
 
+### Assigning Dummies for Demographic Variables
+Neither machine trained nor neural networked models can function using Categorical values, I created dummy variables for the Demographic variances in the dataset.  These dummies created new columns and assigned either a "0" or a "1" to each survey response.  Like computers, models like "0"s and "1"s.
 
+### Creating Binary Variables for "DLEAVING"
+For the "DLEAVING" question, I set response "A" to value "1" and responses, "B", "C" and "D" to value "0".  Again, by assigning either a "0" or a "1" to each survey question I standardized the data, which would make it possible to model later.  Also, since questions "B", "C" and "D" were all very similar in nature, I recoded them the differently than question "A".
 
+This concludes my Data Preprocessing section.
 
+## Variable Relationship Correlations
+I used a correlation matrix to help me identify any relationships between the variables in my data, essentially attempting to identify any positive relationship between variables.  While there were a few questions which generated very strong positive relationships, greater than 0.8, the majority of the questions did not.  Further research into the causes of high positivity between variables would require further analysis.  Additionally, had I decided to recode any coefficients greater than 0.8 together, I might have observed less noise in my matrix.
+
+![image](https://github.com/veenahvina/White_House_Analysis_MarvinaLarry/assets/131216752/77244de3-806e-41bc-8ff4-fc7dac48a682)
+
+## Logistic Regression Analysis
+As a refresher, the purpose of this simulated analysis is to predict the liklihood of employee retention at the White House.  One method of doing this is by using logistic regression to calculate the probability an employee will leave or continue working at the White House using a series of survey responses.
+After establishing the "DLEAVING" question as my target or Independent variable, I trained, tested an fitted my model to predict the probability an employee will stay.  I conducted two model simulations using different model inputs.  In the first model, using a Penalty of "None", the results indicated high accuracy that the survey responses could determine if an employee was leaving or staying.  However, it didn't do so well predicting positive outcomes when compared to actual occurences.  
+
+![image](https://github.com/veenahvina/White_House_Analysis_MarvinaLarry/assets/131216752/0a9cbe97-99bd-4737-8f9f-8da2bc5c766e)
+
+![image](https://github.com/veenahvina/White_House_Analysis_MarvinaLarry/assets/131216752/3de7df75-1a4b-4752-8259-89e82f44d14a)
+
+In my second model, I decided to address the imbalancing in my dataset caused by the removal of missing values and aggegating other values together by using balanced weighted class model.  The goal was to re-balance the distribution of classes in the dataset and to remove any biasness that may have existed.  Use of this balancing approach has a slightly positive impact on 
+
+![image](https://github.com/veenahvina/White_House_Analysis_MarvinaLarry/assets/131216752/94bb8484-5098-4532-b394-79ed3cbaed5b)
+
+![image](https://github.com/veenahvina/White_House_Analysis_MarvinaLarry/assets/131216752/f8ba4505-8908-45da-81c9-22a8386d47c6)
 
 
 
