@@ -39,7 +39,7 @@ Neither machine trained nor neural networked models can function using Categoric
 ### Creating Binary Variables for "DLEAVING"
 For the "DLEAVING" question, I set response "A" to value "1" and responses, "B", "C" and "D" to value "0".  Again, by assigning either a "0" or a "1" to each survey question I standardized the data, which would make it possible to model later.  Also, since questions "B", "C" and "D" were all very similar in nature, I recoded them the differently than question "A".
 
-This concludes my Data Preprocessing section.
+This concludes the Data Preprocessing section.
 
 ## Variable Relationship Correlations
 I used a correlation matrix to help me identify any relationships between the variables in my data, essentially attempting to identify any positive relationship between variables.  While there were a few questions which generated very strong positive relationships, greater than 0.8, the majority of the questions did not.  Further research into the causes of high positivity between variables would require further analysis.  Additionally, had I decided to recode any coefficients greater than 0.8 together, I might have observed less noise in my matrix.
@@ -54,11 +54,23 @@ After establishing the "DLEAVING" question as my target or Independent variable,
 
 ![image](https://github.com/veenahvina/White_House_Analysis_MarvinaLarry/assets/131216752/3de7df75-1a4b-4752-8259-89e82f44d14a)
 
-In my second model, I decided to address the imbalancing in my dataset caused by the removal of missing values and aggegating other values together by using balanced weighted class model.  The goal was to re-balance the distribution of classes in the dataset and to remove any biasness that may have existed.  Use of this balancing approach has a slightly positive impact on 
+In my second model, I decided to address the imbalancing in my dataset caused by the removal of missing values and aggegating other values together by using balanced weighted class model.  The goal was to re-balance the distribution of classes in the dataset and to remove any biasness that may have existed.  Use of this balancing approach had a slightly positive impact on my F1 score.
 
 ![image](https://github.com/veenahvina/White_House_Analysis_MarvinaLarry/assets/131216752/94bb8484-5098-4532-b394-79ed3cbaed5b)
 
 ![image](https://github.com/veenahvina/White_House_Analysis_MarvinaLarry/assets/131216752/f8ba4505-8908-45da-81c9-22a8386d47c6)
+
+This concludes the Logistic Regression section.
+
+## Decision Plotting Using Shap Analysis
+
+I used the Decision Plot by Shap Analysis to provide a visual representation of the most significant survey questions when predicting whether an employee would leave or continue working at the White House.  In the Decision Plot below, the most significant features appear to contribute equally to the prediction of the Outcome:  Will the employee stay or go.
+
+![image](https://github.com/veenahvina/White_House_Analysis_MarvinaLarry/assets/131216752/145e0352-2419-498b-abe4-58beac60632e)
+
+This concludes the Shap Analysis section and this README.
+
+
 
 
 
